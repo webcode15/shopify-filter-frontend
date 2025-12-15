@@ -1,0 +1,36 @@
+{{ 'main-product-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'main-product-grid.js' | asset_url }}" defer="defer"></script>
+<div class="page-width">
+  <div class="main-product-grid">
+    <div id="filters" style="margin-bottom: 20px;"></div>
+    <div id="productList">
+      <img src="https://cdn.shopify.com/s/files/1/0624/1111/2615/files/tube-spinner_2.svg?v=1759908688" alt="loading...." width="40" height="40">
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Main Product Grid",
+  "tag": "section",
+  "class": "product-filter-api",
+  "settings": [
+    {
+      "type": "text",
+      "id": "api_url",
+      "label": "API Base URL",
+      "default": "/products/collection"
+    },
+    {
+      "type": "text",
+      "id": "location_id",
+      "label": "Shopify Location ID",
+      "default": "gid://shopify/Location/68360798375"
+    }
+  ],
+  "presets": [
+    {
+        "name": "Main Product Grid"
+    }
+  ]
+}
+{% endschema %}
